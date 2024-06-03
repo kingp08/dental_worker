@@ -1,0 +1,125 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: none;
+}
+
+::-webkit-scrollbar-track:hover {
+  background: none;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  border-radius: 16px;
+  border: 5px solid #8032ff;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  border: 5px solid #6627cc;
+}
+
+/* set button(top and bottom of the scrollbar) */
+::-webkit-scrollbar-button {
+  display: none;
+}
+
+.react-calendar__month-view__weekdays abbr {
+  text-decoration: none;
+}
+
+.react-calendar__tile {
+  border-radius: 9999px;
+}
+
+.react-calendar__tile {
+  @media (max-width: 500px) {
+    padding: 10px 3px;
+  }
+}
+
+.react-calendar__tile--now {
+  background: none !important;
+  border: 2px solid #8032ff !important;
+  color: #8032ff !important;
+  font-weight: 700 !important;
+}
+
+.react-calendar__month-view__days__day {
+  color: #7a6899;
+}
+
+.rbc-header {
+  padding: 0 !important;
+  border: none !important;
+}
+
+.rbc-month-view {
+  border: none !important;
+}
+
+.rbc-day-bg {
+  border: 1px solid #f6f4f9;
+  border-radius: 0.5rem;
+}
+
+.rbc-month-row + .rbc-month-row {
+  border: none !important;
+}
+
+.rbc-date-cell {
+  padding-top: 7px !important;
+  padding-right: 7px !important;
+  color: #7a6899 !important;
+}
+
+.rbc-event {
+  background-color: transparent !important;
+}
+
+.rbc-date-cell.rbc-now.rbc-current {
+  color: #8032ff !important;
+}
+
+.tooltip-center-small-screen {
+  @media (max-width: 500px) {
+    position: fixed;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    width: 82%;
+  }
+}
